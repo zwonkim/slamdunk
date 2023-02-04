@@ -4,11 +4,11 @@ const qnaList = [
     a: [
       {
         answer: "누군가 나한테 말을 걸어줄 때까지 기다린다",
-        type: ["cow", "tiger", "dragon", "chick"],
+        type: "I",
       },
       {
         answer: "큰소리로 관등성명을하며 먼저 인사한다",
-        type: ["mouse", "rabbit", "horse", "snake", "dog", "monkey"],
+        type: "E",
       },
     ],
   },
@@ -17,11 +17,11 @@ const qnaList = [
     a: [
       {
         answer: "너무 좋다 ! 근처에 있는 맛집과 카페를 검색한다",
-        type: ["mouse", "rabbit", "tiger", "monkey"],
+        type: "E",
       },
       {
         answer: "단 둘은 .. 아직 너무 어색하고 불편할 것 같은데 ..",
-        type: ["cow", "horse", "snake", "dog"],
+        type: "I",
       },
     ],
   },
@@ -31,12 +31,12 @@ const qnaList = [
       {
         answer:
           "전반에 마지막 수비 리바운드를 잡아내 경기 흐름을 잡아오신 것도 너무 멋있었고요 경기 마지막에 넣었던 덩크슛도 정말 인상 깊었어요",
-        type: ["cow", "rabbit", "tiger", "dog", "monkey"],
+        type: "S",
       },
       {
         answer:
           "매 순간이 너무 멋있었는데요 공을 향한 선배의 저돌적인 눈빛과 나비처럼 날아 벌처럼 쏘아 올린 슛들이 특히 기억에 남아요",
-        type: ["sheep", "chick", "pig"],
+        type: "N",
       },
     ],
   },
@@ -45,11 +45,11 @@ const qnaList = [
     a: [
       {
         answer: "컨디션 조절을 최대한 빨리 잠들기 위해 노력한다",
-        type: ["cow", "tiger", "dragon"],
+        type: "S",
       },
       {
         answer: "덩크슛을 넣는 내 모습을 상상하며 이미지 트레이닝을 한다",
-        type: ["sheep", "dog", "monkey", "chick", "pig"],
+        type: "N",
       },
     ],
   },
@@ -57,13 +57,13 @@ const qnaList = [
     q: "경기 당일, 너무 긴장한 나에게 안선생님이 아무 생각도 하지 말고 크게 심호흡을 하라고 한다",
     a: [
       {
-        answer: "선생님 말을 따라 크게 심호흡을 하며 머리를 비워본다",
-        type: ["cow", "sheep", "dog", "dragon", "chick"],
-      },
-      {
         answer:
           "아무 생각을 안 하려고 하는 순간, 코트장에서 자빠지는 상상을 해버렸다",
-        type: ["mouse", "rabbit", "horse", "pig"],
+        type: "N",
+      },
+      {
+        answer: "선생님 말을 따라 크게 심호흡을 하며 머리를 비워본다",
+        type: "S",
       },
     ],
   },
@@ -73,11 +73,11 @@ const qnaList = [
     a: [
       {
         answer: "일정에 맞춰 입을 옷, 세면도구, 비상약 등을 챙긴다",
-        type: ["dragon", "chick", "pig"],
+        type: "J",
       },
       {
         answer: "출발하기 직전에 온갖 짐을 가방에 쑤셔 넣는다",
-        type: ["mouse", "rabbit", "horse", "dog"],
+        type: "P",
       },
     ],
   },
@@ -86,11 +86,11 @@ const qnaList = [
     a: [
       {
         answer: "선배님 괜찮으세요? 엄마손은 약손 해드릴까요?",
-        type: ["cow", "sheep", "pig"],
+        type: "F",
       },
       {
         answer: "오늘 점심 뭐드셨나요? 약은 드셨어요?",
-        type: ["tiger", "dragon", "chick"],
+        type: "T",
       },
     ],
   },
@@ -99,11 +99,11 @@ const qnaList = [
     a: [
       {
         answer: "모든 물건이 자리에 맞추어 정리 정돈이 되어있다",
-        type: ["mouse", "dragon", "chick"],
+        type: "J",
       },
       {
         answer: "깨끗하지는 않지만 .. 나름의 질서가 있다",
-        type: ["rabbit", "tiger", "horse", "snake", "dog", "monkey"],
+        type: "P",
       },
     ],
   },
@@ -112,11 +112,11 @@ const qnaList = [
     a: [
       {
         answer: "뭐지 ..? 내가 뭐 잘못했나 ..?",
-        type: ["sheep", "mouse", "snake", "chick"],
+        type: "F",
       },
       {
         answer: "왜저래? 오늘 점심 뭐 먹지",
-        type: ["cow", "rabbit", "horse", "pig"],
+        type: "T",
       },
     ],
   },
@@ -125,26 +125,26 @@ const qnaList = [
 const resultList = [
   {
     name: "안선생님",
-    desc: "연애 유형의 진국인 당신! 소에 해당하는 당신은 상대방만 바라보는 해바라기 연애 스타일이랍니다. 매사에 끈기가 있어 연애를 할 때 성실하고 진심을 다하는 성향을 가지고, 온화하며 따뜻한 마음을 가지고 있어요. 한 번 좋아하면 끝까지 좋아하는 의리파지만 자존심이 쌔 은근히 고집이 강하답니다. 또한 욱하는 성질이 있어 이런 부분들을 조심해야 하고, 질투심이 많아 사랑이 집착으로 바뀔 수 있어 주의해야 된답니다! ",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
     name: "송태섭",
-    desc: "한 번 좋아하는 사람이 있으면 내 사람으로 만드는 당신! 호랑이에 해당하는 당신은 썸부터 사랑까지 한 번에 직진하는 스타일이랍니다. 연애할 때 주로 이끄는 성향을 가지고 있고, 시원시원한 성격과 유쾌한 성격을 가지고 있어요. 대쪽같은 성격에다 실수를 용납하는 대인배지만 유혹에 약하고 허영때문에 들뜨는 성격이라 다른 이성의 접근에 주의해야 돼요. 또한 내가 한 말로 인해 상대방이 상처를 받을 수 있기 때문에, 항상 말 조심이 필요하답니다!",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
     name: "강백호",
-    desc: "상대방을 홀리게 만드는 당신! 신비롭고 독특한 매력을 가져, 상대방이 푹 빠지게 만드는 스타일이에요. 직감이 발달되어 손재주가 뛰어난 편이고, 연애할 때 통통 튀는 모습들을 많이 보여준답니다. 유순하고 낙천적인 성향이지만, 자칫잘못하면 상대방에게 천진난만한 아이처럼 보일 수 있는 점을 주의해야 돼요. 또한 감정 기복이 심한 편이라 변덕스러운 마음을 가질 수 있어, 이런 부분들에 신경을 쓴다면 좋은 연애를 할 수 있어요.",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
     name: "서태웅",
-    desc: "상대방과의 미래를 꿈꾸는 당신! 현실적인 연애보다는, 미래에 대한 이상적인 연애관을 가지고 있어요. 매일매일 사랑하는 사람과 보낼 미래를 생각하기 때문에, 좋은 신랑감이 될 수 있는 자질이 있답니다. 또한 일적으로나 사랑으로나 야망이 커, 크게 성공할 확률이 높고 리더십이 매우 뛰어나답니다. 다만 높은 이상에 비해서 현실이 자신의 마음에 들지 않으면 허세를 부리거나 사람들을 무시하는 경우가 많으니 이점들을 주의하면 좋을 것 같아요!",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
     name: "정대만",
-    desc: "상대방의 기념일을 챙기며 깜짝 놀라게 하는 당신!, 아이디어가 뛰어나고 남다른 감각이 있어, 상대방에게 많은 이벤트를 해주는 스타일이에요. 연애할 때 눈치도 빠르고, 감동을 줄 수 있어 상대방이 매일 행복하답니다. 전체적으로 화려한 연애를 하지만, 은근히 비밀이 많고 우유부단한 성격을 가지고 있답니다. 또한 귀가 매우 얇아 남의 이야기를 곧이 곧대로 믿어, 상대방을 의심하기도 하기 때문에 조심해야 된답니다!",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
     name: "채치수",
-    desc: "연애할 때, 센스가 넘쳐나는 당신! 말재주가 뛰어나며 처세술이 뛰어나, 상대방의 호감을 금방 얻는답니다. 낙천적이고 유연한 성격을 가지고 있으며, 구속받는 것을 싫어하는 스타일이에요. 소중한 사람들을 위해 희생할 줄도 알지만, 쾌략 지향적인 경우가 많아 사치와 허영에 물드는 경우가 다반수입니다. 한탕 주의에 빠져 쉽게 망가질 수 있기 때문에 이 점을 주의해야 된답니다!",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
 ];
