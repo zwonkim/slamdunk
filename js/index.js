@@ -2,34 +2,42 @@ const startPage = document.getElementById("startPage");
 const qnaPage = document.getElementById("qnaPage");
 const resultPage = document.getElementById("resultPage");
 const startBtn = document.getElementById("startBtn");
-let select = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const endPoint = 8;
+let selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-//결과값 더하기랑 endPoint 다시 봐봐
+const setResult = () => {
+  const result = calcResult();
 
-console.log(select);
-const setResult = () => {};
+  const title = document.querySelector(".resultType");
+  title.innerHTML = resultList[result].name;
+
+  const desc = document.querySelector(".resultDesc");
+  desc.innerHTML = resultList[result].desc;
+};
 
 const calcResult = () => {
-  console.log(select);
+  const max = selected.indexOf(Math.max(...selected));
+  let index;
+  for (let i = 0; i < resultList.length; i++) {
+    if (resultList[i].type.includes(max)) {
+      index = i;
+    }
+  }
+  return index;
 };
 
 const goResult = () => {
-  qnaPage.classList.add("hidden");
-  resultPage.classList.remove("hidden");
-  setResult();
+  qnaPage.style.display = "none";
+  resultPage.style.display = "block";
   calcResult();
+  setResult();
 };
 
 const clickAnswer = (index) => {
-  index += 1;
   const answers = document.querySelectorAll(".answerList");
   for (let i = 0; i < answers.length; i++) {
     answers[i].disabled = true;
-    answers[i].classList.add("hidden");
+    answers[i].style.display = "none";
   }
-
-  goNext(index);
 };
 
 const createAnswer = (answer, index, type) => {
@@ -43,8 +51,11 @@ const createAnswer = (answer, index, type) => {
     clickAnswer(index);
     console.log("타입", type);
     for (let i = 0; i < type.length; i++) {
-      select[type[i]] += 1;
+      selected[type[i] - 1] += 1;
     }
+    console.log("셀렉트", selected);
+    index += 1;
+    goNext(index);
   });
 };
 
@@ -53,6 +64,7 @@ const goNext = (index) => {
     goResult();
     return;
   }
+
   const qBox = document.querySelector(".question");
   qBox.innerHTML = qnaList[index].q;
   for (let i = 0; i < qnaList[index].a.length; i++) {
@@ -60,11 +72,14 @@ const goNext = (index) => {
     const type = qnaList[index].a[i].type;
     createAnswer(answer, index, type);
   }
+
+  const status = document.querySelector(".status");
+  status.style.width = (80 / qnaList.length) * (index + 1) + "%";
 };
 
 const getStart = () => {
-  startPage.classList.add("hidden");
-  qnaPage.classList.remove("hidden");
+  startPage.style.display = "none";
+  qnaPage.style.display = "flex";
   let index = 0;
   goNext(index);
 };

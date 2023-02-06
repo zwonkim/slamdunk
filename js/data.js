@@ -23,11 +23,11 @@ const qnaList = [
     a: [
       {
         answer: "누군가 나한테 말을 걸어줄 때까지 기다린다",
-        type: [1, 2, 9, 10, 3, 4, 11, 12],
+        type: [1, 2, 3, 4, 9, 10, 11, 12],
       },
       {
         answer: "큰소리로 관등성명을하며 먼저 인사한다",
-        type: [5, 6, 13, 14, 7, 8, 15, 16],
+        type: [5, 6, 7, 8, 13, 14, 15, 16],
       },
     ],
   },
@@ -40,7 +40,7 @@ const qnaList = [
       },
       {
         answer: "단 둘은 .. 아직 너무 어색하고 불편할 것 같은데 ..",
-        type: [1, 2, 9, 10, 3, 4, 11, 12],
+        type: [1, 2, 3, 4, 9, 10, 11, 12],
       },
     ],
   },
@@ -101,7 +101,7 @@ const qnaList = [
     ],
   },
   {
-    q: "점심 식사 후 갑자기 서태웅이 배탈이 났다",
+    q: "점심 식사 후, 갑자기 서태웅이 배탈이 났다",
     a: [
       {
         answer: "선배님 괜찮으세요? 엄마손은 약손 해드릴까요?",
@@ -134,7 +134,7 @@ const qnaList = [
         type: [3, 4, 6, 7, 9, 11, 13, 15],
       },
       {
-        answer: "왜저래? 오늘 점심 뭐 먹지",
+        answer: "뭐야 왜저래. 오늘 점심 뭐 먹지",
         type: [1, 2, 5, 8, 10, 12, 14, 16],
       },
     ],
@@ -143,27 +143,45 @@ const qnaList = [
 
 const resultList = [
   {
+    id: "teacher",
+    type: [10, 12, 14],
     name: "안선생님",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    desc: "상대방에게 부드럽게 말하는 당신",
   },
   {
+    id: "taesub",
+    type: [3, 8],
     name: "송태섭",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    desc: "화합을 중시하며 충돌을 회피하는 성향이 있는 당신",
   },
   {
+    id: "baekho",
+    type: [9, 15],
     name: "강백호",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    desc: "이성적이며 두뇌 회전이 빠른 당신",
   },
   {
+    id: "taewoong-esp",
+    type: [5, 7],
     name: "서태웅",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    desc: "센스 있고 유머러스한 당신",
   },
   {
+    id: "taewoong-is",
+    type: [0, 1, 2],
+    name: "서태웅",
+    desc: "합리적으로 사고하며 책임감과 인내심이 높은 당신",
+  },
+  {
+    id: "daeman",
+    type: [4, 6],
     name: "정대만",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    desc: "적응력이 빠르고 사람들을 잘 다루는 당신",
   },
   {
+    id: "chisu",
+    type: [11, 13],
     name: "채치수",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    desc: "비합리적인 규칙과 비효율적인 체계에 거부감을 느끼는 당신",
   },
 ];
