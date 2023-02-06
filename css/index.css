@@ -6,9 +6,7 @@
 /* startPage */
 #startPage {
   width: 100vw;
-  /* height: 100vh; */
-  margin-top: 50%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +49,7 @@
   display: none;
   padding: 20px;
   /* height: 100vh; */
-  margin-top: 50%;
+  margin-top: 30%;
   height: 100%;
   flex-direction: column;
   align-items: center;
