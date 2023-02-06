@@ -88,7 +88,7 @@
 .answerList {
   background-color: var(--main-red);
   color: var(--main-white);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: 10px;
   padding: 0.6rem;
