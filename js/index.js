@@ -4,6 +4,16 @@ const resultPage = document.getElementById("resultPage");
 const startBtn = document.getElementById("startBtn");
 let selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+const btnShareTw = document.querySelector("#shareTw");
+
+btnShareTw.addEventListener("click", () => {
+  const sendText = "이 세계에선 내가 북산의 농구부 ?";
+  const pageUrl = "https://baekhoisthebest.netlify.app/";
+  window.open(
+    `https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`
+  );
+});
+
 const setResult = () => {
   const result = calcResult();
 
