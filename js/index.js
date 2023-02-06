@@ -4,8 +4,19 @@ const resultPage = document.getElementById("resultPage");
 const startBtn = document.getElementById("startBtn");
 let selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-const btnShareTw = document.querySelector("#shareTw");
+const retryBtn = document.querySelector(".retryBtn");
+retryBtn.addEventListener("click", () => {
+  resultPage.style.animation = "fadeOut 0.7s";
+  setTimeout(() => {
+    startPage.style.animation = "fadeIn 0.7s";
+    setTimeout(() => {
+      resultPage.style.display = "none";
+      startPage.style.display = "flex";
+    }, 200);
+  }, 200);
+});
 
+const btnShareTw = document.querySelector(".shareTw");
 btnShareTw.addEventListener("click", () => {
   const sendText = "이 세계에선 내가 북산의 농구부 ?";
   const pageUrl = "https://baekhoisthebest.netlify.app/";
