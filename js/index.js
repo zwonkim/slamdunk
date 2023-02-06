@@ -12,6 +12,11 @@ const setResult = () => {
 
   const desc = document.querySelector(".resultDesc");
   desc.innerHTML = resultList[result].desc;
+
+  const imgBox = document.querySelector(".resultImg");
+  const img = document.createElement("img");
+  img.src = `./image/${result}.jpg`;
+  imgBox.append(img);
 };
 
 const calcResult = () => {
@@ -26,8 +31,15 @@ const calcResult = () => {
 };
 
 const goResult = () => {
-  qnaPage.style.display = "none";
-  resultPage.style.display = "block";
+  qnaPage.style.animation = "fadeOut 0.7s";
+  setTimeout(() => {
+    resultPage.style.animation = "fadeIn 0.7s";
+    setTimeout(() => {
+      qnaPage.style.display = "none";
+      resultPage.style.display = "flex";
+    }, 200);
+  }, 200);
+
   calcResult();
   setResult();
 };
@@ -36,7 +48,10 @@ const clickAnswer = (index) => {
   const answers = document.querySelectorAll(".answerList");
   for (let i = 0; i < answers.length; i++) {
     answers[i].disabled = true;
-    answers[i].style.display = "none";
+    answers[i].style.animation = "fadeOut 0.9s";
+    setTimeout(() => {
+      answers[i].style.display = "none";
+    }, 600);
   }
 };
 
@@ -49,13 +64,13 @@ const createAnswer = (answer, index, type) => {
 
   answerBtn.addEventListener("click", () => {
     clickAnswer(index);
-    console.log("타입", type);
     for (let i = 0; i < type.length; i++) {
       selected[type[i] - 1] += 1;
     }
-    console.log("셀렉트", selected);
     index += 1;
-    goNext(index);
+    setTimeout(() => {
+      goNext(index);
+    }, 600);
   });
 };
 
@@ -74,12 +89,19 @@ const goNext = (index) => {
   }
 
   const status = document.querySelector(".status");
-  status.style.width = (80 / qnaList.length) * (index + 1) + "%";
+  status.style.width = (100 / qnaList.length) * (index + 1) + "%";
 };
 
 const getStart = () => {
-  startPage.style.display = "none";
-  qnaPage.style.display = "flex";
+  startPage.style.animation = "fadeOut 0.7s";
+  setTimeout(() => {
+    qnaPage.style.animation = "fadeIn 0.7s";
+    setTimeout(() => {
+      startPage.style.display = "none";
+      qnaPage.style.display = "flex";
+    }, 200);
+  }, 200);
+
   let index = 0;
   goNext(index);
 };

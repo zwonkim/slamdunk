@@ -3,7 +3,7 @@
   --main-red: #EC4D36;
   /* --main-red: #d84339; */
   /* --main-white: #f3ece4; */
-  --main-black: #5e5050;
+  --main-font-color: #5e5050;
 }
 /* startPage */
 #startPage {
@@ -16,16 +16,34 @@
   gap: 10px;
   /* background-color: var(--main-white); */
 }
+.title {
+  padding: 20px;
+}
+.title h1 {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 1.4rem;
+}
+.title h4 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.5;
+}
+.title span {
+  color: var(--main-red);
+  font-size: 2.5rem;
+}
 .mainImg {
   width: 85%;
-  /* margin: auto; */
 }
 #startBtn {
   background-color: var(--main-red);
   color: var(--main-white);
   border-radius: 10px;
   padding: 0.5rem;
+  margin-top: 1rem;
   border: none;
+  font-weight: 700;
 }
 
 /* qnaPage */
@@ -49,18 +67,18 @@
 .status {
   height: 20px;
   border-radius: 20px;
-  background-color: #EC4D36;
+  background-color: #382f2f;
   z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
 }
 .question {
-  color: var(--main-black);
+  color: #5e5050;
   display: flex;
   justify-content: center;
   text-align: center;
-  font-weight: bold;
+  font-weight: 800;
   word-break: keep-all;
 }
 .answers {
@@ -73,14 +91,60 @@
   background-color: var(--main-red);
   color: var(--main-white);
   font-size: 0.7rem;
+  font-weight: 600;
   border-radius: 10px;
   padding: 0.6rem;
   border: none;
+  word-break: keep-all;
 }
 
 /* resultPage */
 #resultPage {
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#resultPage h1 {
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+.resultType {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 1.7rem;
+  position: relative;
+}
+.resultType::after {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: -10%;
+  content: '';
+  display: block;
+  background-color: rgb(236, 77, 54, 0.6);
+  width: 80px;
+  height: 10px;
+
+}
+.resultImg {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.resultImg img {
+  width: 70%;
+}
+.resultDesc {
+  width: 80%;
+  font-weight: bold;
+  word-break: keep-all;
+  text-align: center;
+  line-height: 1.8;
 }
 /* animation */
 @keyframes fadeIn {
