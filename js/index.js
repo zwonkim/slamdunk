@@ -6,6 +6,7 @@ let selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 const retryBtn = document.querySelector(".retryBtn");
 retryBtn.addEventListener("click", () => {
+  selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   resultPage.style.animation = "fadeOut 0.7s";
   setTimeout(() => {
     startPage.style.animation = "fadeIn 0.7s";
@@ -27,6 +28,7 @@ btnShareTw.addEventListener("click", () => {
 
 const setResult = () => {
   const result = calcResult();
+  console.log("결과", result);
 
   const title = document.querySelector(".resultType");
   title.innerHTML = resultList[result].name;
@@ -38,10 +40,15 @@ const setResult = () => {
   const img = document.createElement("img");
   img.src = `./image/${result}.jpg`;
   imgBox.append(img);
+  if (imgBox.hasChildNodes) {
+    imgBox.removeChild(imgBox.childNodes[0]);
+    imgBox.append(img);
+  }
 };
 
 const calcResult = () => {
   const max = selected.indexOf(Math.max(...selected));
+  console.log("맥스", max);
   let index;
   for (let i = 0; i < resultList.length; i++) {
     if (resultList[i].type.includes(max)) {
@@ -88,6 +95,7 @@ const createAnswer = (answer, index, type) => {
     for (let i = 0; i < type.length; i++) {
       selected[type[i] - 1] += 1;
     }
+    console.log(selected);
     index += 1;
     setTimeout(() => {
       goNext(index);
