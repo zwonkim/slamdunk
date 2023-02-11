@@ -1,10 +1,12 @@
-const startPage = document.getElementById("startPage");
-const qnaPage = document.getElementById("qnaPage");
-const resultPage = document.getElementById("resultPage");
-const startBtn = document.getElementById("startBtn");
+import { qnaList, resultList } from './js/data.js';
+
+const startPage:HTMLElement | null = document.getElementById("startPage");
+const qnaPage:HTMLElement | null = document.getElementById("qnaPage");
+const resultPage:HTMLElement | null = document.getElementById("resultPage");
+const startBtn:HTMLElement | null = document.getElementById("startBtn");
 let selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-const retryBtn = document.querySelector(".retryBtn");
+const retryBtn:HTMLElement | null = document.querySelector(".retryBtn");
 retryBtn.addEventListener("click", () => {
   selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   resultPage.style.animation = "fadeOut 0.7s";
@@ -17,7 +19,7 @@ retryBtn.addEventListener("click", () => {
   }, 200);
 });
 
-const btnShareTw = document.querySelector(".shareTw");
+const btnShareTw:HTMLElement | null = document.querySelector(".shareTw");
 btnShareTw.addEventListener("click", () => {
   const sendText = "이 세계에선 내가 북산의 농구부 ?";
   const pageUrl = "https://baekhoisthebest.netlify.app/";
@@ -30,7 +32,7 @@ const setResult = () => {
   const result = calcResult();
   console.log("결과", result);
 
-  const title = document.querySelector(".resultType");
+  const title:HTMLDivElement | null = document.querySelector(".resultType");
   title.innerHTML = resultList[result].name;
 
   const desc = document.querySelector(".resultDesc");
@@ -72,8 +74,8 @@ const goResult = () => {
   setResult();
 };
 
-const clickAnswer = (index) => {
-  const answers = document.querySelectorAll(".answerList");
+const clickAnswer = (index:number) => {
+  const answers:NodeListOf<HTMLButtonElement> = document.querySelectorAll(".answerList");
   for (let i = 0; i < answers.length; i++) {
     answers[i].disabled = true;
     answers[i].style.animation = "fadeOut 0.9s";
@@ -83,7 +85,7 @@ const clickAnswer = (index) => {
   }
 };
 
-const createAnswer = (answer, index, type) => {
+const createAnswer = (answer:string, index:number, type:number[]) => {
   const aBox = document.querySelector(".answers");
   const answerBtn = document.createElement("button");
   answerBtn.classList.add("answerList");
@@ -103,26 +105,30 @@ const createAnswer = (answer, index, type) => {
   });
 };
 
-const goNext = (index) => {
+const goNext = (index: number) => {
   if (index === qnaList.length) {
     goResult();
     return;
   }
 
   const qBox = document.querySelector(".question");
-  qBox.innerHTML = qnaList[index].q;
+  if(qBox !== null) {
+    qBox.innerHTML = qnaList[index].q;
   for (let i = 0; i < qnaList[index].a.length; i++) {
     const answer = qnaList[index].a[i].answer;
     const type = qnaList[index].a[i].type;
     createAnswer(answer, index, type);
   }
+  }
+  
 
-  const status = document.querySelector(".status");
+  const status:HTMLDivElement = document.querySelector(".status");
   status.style.width = (100 / qnaList.length) * (index + 1) + "%";
 };
 
 const getStart = () => {
-  startPage.style.animation = "fadeOut 0.7s";
+  if(startPage !== null && qnaPage !== null) {
+    startPage.style.animation = "fadeOut 0.7s";
   setTimeout(() => {
     qnaPage.style.animation = "fadeIn 0.7s";
     setTimeout(() => {
@@ -130,11 +136,11 @@ const getStart = () => {
       qnaPage.style.display = "flex";
     }, 200);
   }, 200);
-
+  }
   let index = 0;
   goNext(index);
 };
 
-startBtn.addEventListener("click", () => {
+startBtn?.addEventListener("click", () => {
   getStart();
 });
