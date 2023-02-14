@@ -1,12 +1,12 @@
-import { qnaList, resultList } from './js/data.js';
+import { qnaList, resultList } from './data';
 
-const startPage:HTMLElement | null = document.getElementById("startPage");
-const qnaPage:HTMLElement | null = document.getElementById("qnaPage");
-const resultPage:HTMLElement | null = document.getElementById("resultPage");
-const startBtn:HTMLElement | null = document.getElementById("startBtn");
+const startPage = document.getElementById("startPage") as HTMLElement;
+const qnaPage = document.getElementById("qnaPage") as HTMLElement;
+const resultPage = document.getElementById("resultPage") as HTMLElement;
+const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
 let selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-const retryBtn:HTMLElement | null = document.querySelector(".retryBtn");
+const retryBtn = document.querySelector(".retryBtn") as HTMLButtonElement;
 retryBtn.addEventListener("click", () => {
   selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   resultPage.style.animation = "fadeOut 0.7s";
@@ -19,8 +19,8 @@ retryBtn.addEventListener("click", () => {
   }, 200);
 });
 
-const btnShareTw:HTMLElement | null = document.querySelector(".shareTw");
-btnShareTw.addEventListener("click", () => {
+const shareTwBtn = document.querySelector(".shareTw") as HTMLButtonElement;
+shareTwBtn.addEventListener("click", () => {
   const sendText = "이 세계에선 내가 북산의 농구부 ?";
   const pageUrl = "https://baekhoisthebest.netlify.app/";
   window.open(
@@ -28,30 +28,33 @@ btnShareTw.addEventListener("click", () => {
   );
 });
 
+
 const setResult = () => {
   const result = calcResult();
-  console.log("결과", result);
+  // console.log("결과", result);
 
-  const title:HTMLDivElement | null = document.querySelector(".resultType");
+  const title = document.querySelector(".resultType") as HTMLDivElement;
   title.innerHTML = resultList[result].name;
 
-  const desc = document.querySelector(".resultDesc");
+  const desc = document.querySelector(".resultDesc") as HTMLDivElement;
   desc.innerHTML = resultList[result].desc;
 
-  const imgBox = document.querySelector(".resultImg");
+  const imgBox = document.querySelector(".resultImg") as HTMLDivElement;
   const img = document.createElement("img");
   img.src = `./image/${result}.jpg`;
   imgBox.append(img);
-  if (imgBox.hasChildNodes) {
+  if (imgBox.hasChildNodes()) {
     imgBox.removeChild(imgBox.childNodes[0]);
     imgBox.append(img);
   }
 };
 
-const calcResult = () => {
+type TypeCalcResult = () => number
+
+const calcResult:TypeCalcResult = () => {
   const max = selected.indexOf(Math.max(...selected));
-  console.log("맥스", max);
-  let index;
+  // console.log("맥스", max);
+  let index = -1;
   for (let i = 0; i < resultList.length; i++) {
     if (resultList[i].type.includes(max)) {
       index = i;
@@ -90,14 +93,14 @@ const createAnswer = (answer:string, index:number, type:number[]) => {
   const answerBtn = document.createElement("button");
   answerBtn.classList.add("answerList");
   answerBtn.innerHTML = answer;
-  aBox.append(answerBtn);
+  aBox?.append(answerBtn);
 
   answerBtn.addEventListener("click", () => {
     clickAnswer(index);
     for (let i = 0; i < type.length; i++) {
       selected[type[i] - 1] += 1;
     }
-    console.log(selected);
+    // console.log(selected);
     index += 1;
     setTimeout(() => {
       goNext(index);
@@ -120,9 +123,8 @@ const goNext = (index: number) => {
     createAnswer(answer, index, type);
   }
   }
-  
 
-  const status:HTMLDivElement = document.querySelector(".status");
+  const status = document.querySelector(".status") as HTMLDivElement;
   status.style.width = (100 / qnaList.length) * (index + 1) + "%";
 };
 
