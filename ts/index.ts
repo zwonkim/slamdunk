@@ -4,9 +4,10 @@ const startPage = document.getElementById("startPage") as HTMLElement;
 const qnaPage = document.getElementById("qnaPage") as HTMLElement;
 const resultPage = document.getElementById("resultPage") as HTMLElement;
 const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
+const retryBtn = document.querySelector(".retryBtn") as HTMLButtonElement;
+const shareTwBtn = document.querySelector(".shareTw") as HTMLButtonElement;
 let selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-const retryBtn = document.querySelector(".retryBtn") as HTMLButtonElement;
 retryBtn.addEventListener("click", () => {
   selected = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   resultPage.style.animation = "fadeOut 0.7s";
@@ -19,7 +20,6 @@ retryBtn.addEventListener("click", () => {
   }, 200);
 });
 
-const shareTwBtn = document.querySelector(".shareTw") as HTMLButtonElement;
 shareTwBtn.addEventListener("click", () => {
   const sendText = "이 세계에선 내가 북산의 농구부 ?";
   const pageUrl = "https://baekhoisthebest.netlify.app/";
@@ -27,7 +27,6 @@ shareTwBtn.addEventListener("click", () => {
     `https://twitter.com/intent/tweet?text=${sendText}&url=${pageUrl}`
   );
 });
-
 
 const setResult = () => {
   const result = calcResult();
