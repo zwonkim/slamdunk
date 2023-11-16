@@ -1,4 +1,4 @@
-import { qnaList, resultList } from "../data/index.ts";
+import { qnaList, resultList } from "../data/index";
 
 const startPage = document.getElementById("startPage") as HTMLElement;
 const qnaPage = document.getElementById("qnaPage") as HTMLElement;
