@@ -1,4 +1,4 @@
-import { qnaList, resultList } from "../data/index";
+import { qnaList, resultList } from "./../data/index.js";
 
 const startPage = document.getElementById("startPage") as HTMLElement;
 const qnaPage = document.getElementById("qnaPage") as HTMLElement;

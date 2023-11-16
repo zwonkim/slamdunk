@@ -4,7 +4,9 @@
     "module": "ES2015",
     "noImplicitAny": true,
     "lib": ["ES2016", "DOM"],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   },
   "include": ["./ts/**/*.ts"],
   "exclude": ["node_modules"]
