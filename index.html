@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,54 +11,61 @@
   <meta property="og:image" content="./image/main.jpeg">
   <meta property="og:url" content="https://baekhoisthebest.netlify.app/">
   <!-- twitter cards -->
-  <meta name="twitter:card" content="summary"></meta>
+  <meta name="twitter:card" content="summary">
+  </meta>
   <meta name="twitter:url" content="https://baekhoisthebest.netlify.app/" />
   <meta name="twitter:title" content="내가 만약 북산에 들어간다면 누구와 가장 먼저 친해질 수 있을까 ?" />
-  <meta name="twitter:image:src" content="https://mblogthumb-phinf.pstatic.net/MjAyMDExMjRfMzIg/MDAxNjA2MjAzMTQ3MjUw.Z7mrdAiFnl57W_zfxM-yUU7iwXRCqcueD5ihqYqZe7Yg.kIQ2JNOXodyRShilKIRQ4ijiP2N1m6p6uR1I1lqFr68g.JPEG.shtmddl0/20201124%EF%BC%BF153103.jpg?type=w800">
+  <meta name="twitter:image:src"
+    content="https://mblogthumb-phinf.pstatic.net/MjAyMDExMjRfMzIg/MDAxNjA2MjAzMTQ3MjUw.Z7mrdAiFnl57W_zfxM-yUU7iwXRCqcueD5ihqYqZe7Yg.kIQ2JNOXodyRShilKIRQ4ijiP2N1m6p6uR1I1lqFr68g.JPEG.shtmddl0/20201124%EF%BC%BF153103.jpg?type=w800">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6F1807NEV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-T6F1807NEV');
   </script>
   <title>slamdunk</title>
   <link rel="stylesheet" href="./css/index.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <section id='startPage'>
-    <div class='title'>
-      <h1>이 세계에선 내가 <span>북산</span> 의 농구부 ?</h1>
-      <h4>얼떨결에 북산에 입부하게 된 나, <br>누구와 가장 먼저 친해질 수 있을까 ?</h4>
-    </div>
-    <img src="./image/main.jpeg" alt="main image" class='mainImg'>
-    <button id='startBtn'>농놀 고?</button>
-  </section>
-  <section id='qnaPage'>
-    <div class='statusBar'>
-      <div class="status"></div>
-    </div>
-    <div class='question'></div>
-    <div class='answers'></div>
-  </section>
-  <section id='resultPage'>
-    <div class='resultType'></div>
-    <div class='resultImg'></div>
-    <div class='resultDesc'></div>
-    <div class="buttons">
-      <button class="shareTw">
-        <img src='./image/twitter.png' />
-         트위터에 공유하기
-      </button>
-      <button class="retryBtn">다시 할래요 🥺</button>
-    </div>
-  </section>
+  <div id='mobileLayout'>
+    <section id='startPage'>
+      <div class='title'>
+        <h1>이 세계에선 내가 <span>북산</span> 의 농구부 ?</h1>
+        <h4>얼떨결에 북산에 입부하게 된 나, <br>누구와 가장 먼저 친해질 수 있을까 ?</h4>
+      </div>
+      <img src="./image/main.jpeg" alt="main image" class='mainImg'>
+      <button id='startBtn'>농놀 고?</button>
+    </section>
+    <section id='qnaPage'>
+      <div class='statusBar'>
+        <div class="status"></div>
+      </div>
+      <div class='question'></div>
+      <div class='answers'></div>
+    </section>
+    <section id='resultPage'>
+      <div class='resultType'></div>
+      <div class='resultImg'></div>
+      <div class='resultDesc'></div>
+      <div class="buttons">
+        <button class="shareTw">
+          <img src='./image/twitter.png' />
+          트위터에 공유하기
+        </button>
+        <button class="retryBtn">다시 할래요 🥺</button>
+      </div>
+    </section>
+  </div>
   <script type='module' src='./ts/index.js'></script>
 </body>
+
 </html>
