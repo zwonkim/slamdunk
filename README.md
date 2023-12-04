@@ -5,7 +5,7 @@
 <br/><br/>
 
 ## ✨배포사이트 
-🔗 (https://baekhoisthebest.netlify.app/) (모바일 장려)
+🌐 https://baekhoisthebest.netlify.app/
 <br/><br/>
 
 ## ⚙기술 스택
